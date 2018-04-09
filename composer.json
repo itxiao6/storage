@@ -1,0 +1,22 @@
+{
+  "name": "itxiao6/storage",
+  "description": "通用的存储SDK",
+  "keywords": ["minkernel","storage", "文件存储", "file"],
+  "homepage": "http://github.com/itxiao6/storage",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Small six",
+      "email": "itxiao6@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "qiniu/php-sdk":"v7.2.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Itxiao6\\Storage\\": "src/"
+    }
+  }
+}
