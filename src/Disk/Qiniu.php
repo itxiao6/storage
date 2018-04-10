@@ -22,11 +22,11 @@ class Qiniu implements Interfaces
         // TODO: Implement getInterFaces() method.
     }
 
-    function get()
+    function get($name)
     {
         // TODO: Implement get() method.
     }
-    function put()
+    function put($name,$content)
     {
         // TODO: Implement put() method.
     }

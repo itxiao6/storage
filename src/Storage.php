@@ -4,8 +4,12 @@ namespace Itxiao6\Storage;
  * Class Storage
  * @package Itxiao6\Storage
  */
-abstract class Storage
+class Storage
 {
+    /**
+     * @var string
+     */
+    protected $derver = 'Local';
     /**
      * @param $name
      * @param $arguments
@@ -13,8 +17,19 @@ abstract class Storage
      */
     public function __call($name, $arguments)
     {
-//        TODO 装饰者模式
-//        return new self();
+        $class = '\Itxiao6\Storage\Disk\\'.$this -> derver;
+        return (new $class) -> $name(...$arguments);
+    }
+
+    /**
+     * 设置驱动
+     * @param $name
+     * @return $this
+     */
+    public function set_derver($name = '')
+    {
+        $this -> derver = $name;
+        return $this;
     }
 
     /**
@@ -24,6 +39,9 @@ abstract class Storage
      */
     public static function __callStatic($name, $arguments)
     {
+        if($name == 'derver'){
+            return (new static()) -> set_derver(...$arguments);
+        }
         return (new static()) -> $name(...$arguments);
     }
 }

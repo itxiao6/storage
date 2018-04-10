@@ -27,15 +27,17 @@ interface Interfaces
 
     /**
      * 写入文件
+     * @param $name
+     * @param $content
      * @return mixed
      */
-    public function put();
+    public function put($name,$content);
 
     /**
      * 获取文件
      * @return mixed
      */
-    public function get();
+    public function get($name);
 
     /**
      * 文件是否存在
